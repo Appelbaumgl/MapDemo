@@ -15,5 +15,5 @@ code {
 
 .leaflet-container {
   height: 600px;
-  width: 600px;
+  width: inherit;
 }
