@@ -10,6 +10,14 @@ class MarkerMover extends Component {
         this.state.Longitude = '';
     }
 
+    componentDidMount() {
+        var marker = this.props.getMarker();
+        this.setState({
+            Latitude: marker.lat,
+            Longitude: marker.lng
+        });
+    }
+
     render() {
         return (
             <div>
@@ -36,7 +44,7 @@ class MarkerMover extends Component {
         if (isNaN(lat) || isNaN(lng)) {
             return;
         } else {
-            this.props.updateMarker({ lat: lat, lng: lng });
+            this.props.setMarker({ lat: lat, lng: lng });
         }
     }
 }
